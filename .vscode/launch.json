@@ -4,6 +4,13 @@
             "type": "java",
             "name": "App",
             "request": "launch",
+            "mainClass": "noch_verzwickter.App",
+            "projectName": "OOP_Java_Final_Project_8d4f7156"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
             "mainClass": "noch_verzwickter/noch_verzwickter.App",
             "projectName": "demo"
         },

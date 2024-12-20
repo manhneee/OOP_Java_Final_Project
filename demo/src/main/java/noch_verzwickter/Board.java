@@ -129,7 +129,7 @@ public class Board {
         elementArray = shuffleCard(elementArray);
     }
 
-    private void rotateCard(ArrayList<Integer> array, int rotations, boolean clockwise) {
+    void rotateCard(ArrayList<Integer> array, int rotations, boolean clockwise) {
         rotations %= 4; // Optimize unnecessary rotations
         if (!clockwise) {
             rotations = 4 - rotations; // Reverse direction

@@ -3,6 +3,7 @@ package noch_verzwickter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 import javafx.fxml.FXML;
@@ -91,7 +92,7 @@ public class GameController {
     private Label card9b;
     @FXML
     private Label card9l;
-
+    private Label dragSourceLabel;
     private ArrayList<Label> labels;
     private AnimalImages animalImages;
     private Board board;
@@ -99,51 +100,69 @@ public class GameController {
     @FXML
     public void initialize() {
         labels = new ArrayList<>();
-
+    
         // Add all labels to the list
-        labels.add(card1t);
-        labels.add(card1r);
-        labels.add(card1b);
-        labels.add(card1l);
-        labels.add(card2t);
-        labels.add(card2r);
-        labels.add(card2b);
-        labels.add(card2l);
-        labels.add(card3t);
-        labels.add(card3r);
-        labels.add(card3b);
-        labels.add(card3l);
-        labels.add(card4t);
-        labels.add(card4r);
-        labels.add(card4b);
-        labels.add(card4l);
-        labels.add(card5t);
-        labels.add(card5r);
-        labels.add(card5b);
-        labels.add(card5l);
-        labels.add(card6t);
-        labels.add(card6r);
-        labels.add(card6b);
-        labels.add(card6l);
-        labels.add(card7t);
-        labels.add(card7r);
-        labels.add(card7b);
-        labels.add(card7l);
-        labels.add(card8t);
-        labels.add(card8r);
-        labels.add(card8b);
-        labels.add(card8l);
-        labels.add(card9t);
-        labels.add(card9r);
-        labels.add(card9b);
-        labels.add(card9l);
-
+        labels.add(card1t); labels.add(card1r); labels.add(card1b); labels.add(card1l);
+        labels.add(card2t); labels.add(card2r); labels.add(card2b); labels.add(card2l);
+        labels.add(card3t); labels.add(card3r); labels.add(card3b); labels.add(card3l);
+        labels.add(card4t); labels.add(card4r); labels.add(card4b); labels.add(card4l);
+        labels.add(card5t); labels.add(card5r); labels.add(card5b); labels.add(card5l);
+        labels.add(card6t); labels.add(card6r); labels.add(card6b); labels.add(card6l);
+        labels.add(card7t); labels.add(card7r); labels.add(card7b); labels.add(card7l);
+        labels.add(card8t); labels.add(card8r); labels.add(card8b); labels.add(card8l);
+        labels.add(card9t); labels.add(card9r); labels.add(card9b); labels.add(card9l);
+    
         animalImages = new AnimalImages();
         board = new Board();
         display(animalImages, board.getElementArray());
+    
+        // Attach interaction handlers
+        for (Label label : labels) {
+            label.setOnMouseClicked(event -> handleLabelClick(label)); // Rotation
+            label.setOnDragDetected(event -> handleDragDetected(label)); // Drag start
+            label.setOnMouseDragReleased(event -> handleDragDropped(label)); // Drop
+        }
     }
 
-    public void setImageToLabel(@SuppressWarnings("exports") Label label, String imagePath) {
+    @FXML
+    private void handleLabelClick(Label label) {
+        int labelIndex = labels.indexOf(label); // Find the label's index
+        int cardIndex = labelIndex / 4; // Identify the card
+        ArrayList<Integer> card = board.getElementArray().get(cardIndex);
+
+        // Rotate the card clockwise
+        board.rotateCard(card, 1, true);
+
+        // Update the display
+        display(animalImages, board.getElementArray());
+    }
+
+    @FXML
+    private void handleDragDetected(Label label) {
+        dragSourceLabel = label; // Track the source label
+        label.startFullDrag(); // Start the drag process
+    }
+
+    @FXML
+    private void handleDragDropped(Label targetLabel) {
+        if (dragSourceLabel == null || targetLabel == null) return;
+
+        int sourceIndex = labels.indexOf(dragSourceLabel);
+        int targetIndex = labels.indexOf(targetLabel);
+
+        int sourceCardIndex = sourceIndex / 4;
+        int targetCardIndex = targetIndex / 4;
+
+        // Swap the cards
+        ArrayList<ArrayList<Integer>> elementArray = board.getElementArray();
+        Collections.swap(elementArray, sourceCardIndex, targetCardIndex);
+
+        // Update the display
+        display(animalImages, board.getElementArray());
+    }
+
+
+    public void setImageToLabel(Label label, String imagePath, int rotation) {
         // Load the image
         URL resourceURL = getClass().getResource(imagePath);
         if (resourceURL == null) {
@@ -154,8 +173,23 @@ public class GameController {
 
         // Create new ImageView
         ImageView imgView = new ImageView(img);
+        imgView.setRotate(rotation);
 
         label.setGraphic(imgView);
+    }
+
+    public int getRotation(int idxImage, int idxCard, ArrayList<ArrayList<Integer>> array) {
+        if (idxImage == 0) {
+            return 90;
+        } else if (idxImage == 1 && array.get(idxCard).get(idxImage) > 0) {
+            return 180;
+        } else if (idxImage == 2) {
+            return 90;
+        } else if (idxImage == 3 && array.get(idxCard).get(idxImage) < 0) {
+            return 180;
+        } else {
+            return 0;
+        }
     }
 
     public void display(AnimalImages animalImages, ArrayList<ArrayList<Integer>> elementArray) {
@@ -181,7 +215,8 @@ public class GameController {
             if (imageMap.containsKey(key)) {
                 // Get image from the map
                 String imagePath = imageMap.get(key);
-                setImageToLabel(label, imagePath); // Set the image to the label
+                int rotation = getRotation(i % 4, i / 4, elementArray);
+                setImageToLabel(label, imagePath, rotation); // Set the image to the label with rotation
             } else {
                 label.setGraphic(null); // Clear the label graphic if key not found
             }
