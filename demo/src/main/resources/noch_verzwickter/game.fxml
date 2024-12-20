@@ -227,7 +227,7 @@
             <Font name="Comic Sans MS Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="449.0" layoutY="640.0" mnemonicParsing="false" text="SOLUTION" textFill="#6464ff">
+      <Button layoutX="449.0" layoutY="640.0" mnemonicParsing="false" onAction="#showSolution" text="SOLUTION" textFill="#6464ff">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="15.0" />
          </font>

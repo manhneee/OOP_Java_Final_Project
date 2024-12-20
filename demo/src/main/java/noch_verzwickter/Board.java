@@ -6,7 +6,6 @@ import java.util.Random;
 
 public class Board {
     private ArrayList<ArrayList<Integer>> elementArray;
-    private ArrayList<ArrayList<Integer>> shuffledArray;
     private ArrayList<ArrayList<Integer>> solution;
 
     Random random = new Random();
@@ -41,7 +40,6 @@ public class Board {
 
     public Board() {
         elementArray = new ArrayList<>();
-        shuffledArray = new ArrayList<>();
         solution = new ArrayList<>();
 
         // Create nine cards by randomly generating values, setting those in pairs to
@@ -127,11 +125,8 @@ public class Board {
             solution.add(new ArrayList<>(card));
         }
 
-        // Store shuffled board
-        for (ArrayList<Integer> card : elementArray) {
-            shuffledArray.add(new ArrayList<>(card));
-        }
-        shuffledArray = shuffleCard(shuffledArray);
+        // Shuffle the board
+        elementArray = shuffleCard(elementArray);
     }
 
     private void rotateCard(ArrayList<Integer> array, int rotations, boolean clockwise) {
@@ -173,8 +168,8 @@ public class Board {
         return temparray;
     }
 
-    public ArrayList<ArrayList<Integer>> getshuffleBoard() {
-        return this.shuffledArray;
+    public ArrayList<ArrayList<Integer>> getElementArray() {
+        return this.elementArray;
     }
 
     public ArrayList<ArrayList<Integer>> getSolution() {
