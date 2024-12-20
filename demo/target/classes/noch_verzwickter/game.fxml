@@ -36,10 +36,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="card1t" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="card1r" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="card1b" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card1l" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -58,10 +58,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="card2t" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="card2r" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="card2b" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card2l" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -80,10 +80,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="card3t" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="card3r" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="card3b" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card3l" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -102,10 +102,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="49.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card4t" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="card4r" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="card4b" prefHeight="50.0" prefWidth="49.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card4l" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -124,10 +124,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="card5t" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="card5r" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="card5b" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card5l" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -146,10 +146,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="card6t" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="card6r" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="card6b" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card6l" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -168,10 +168,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="card7t" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="card7r" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="card7b" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card7l" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -190,10 +190,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="card8t" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="card8r" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="card8b" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card8l" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
@@ -212,10 +212,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Label fx:id="card9t" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
+                        <Label fx:id="card9r" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="card9b" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="card9l" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                </children>
