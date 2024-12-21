@@ -10,6 +10,8 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="noch_verzwickter.GameController">
    <children>
+      <Label fx:id="background1" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: white;" />
+
       <GridPane alignment="CENTER" layoutX="75.0" layoutY="125.0" prefHeight="450.0" prefWidth="450.0" style="-fx-border-color: darkgrey; -fx-border-width: 5; -fx-border-style: solid;">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
