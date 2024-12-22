@@ -408,8 +408,8 @@ public class GameController {
         ImageView imgView = new ImageView(img);
 
         // Set the fitWidth and fitHeight to match the label size
-        imgView.setFitWidth(40);
-        imgView.setFitHeight(40);
+        imgView.setFitWidth(44);
+        imgView.setFitHeight(44);
 
         label.setGraphic(imgView);
     }
