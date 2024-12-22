@@ -293,10 +293,6 @@ public class GameController {
         }
     }
 
-    public Board getBoard() {
-        return board;
-    }
-
     @FXML
     private void handleLabelClick(Label label) {
         int labelIndex = labels.indexOf(label); // Find the label's index
