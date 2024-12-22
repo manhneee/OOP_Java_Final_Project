@@ -482,12 +482,6 @@ public class GameController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("solution.fxml"));
             Parent root = loader.load();
 
-            // Access the SolutionController
-            SolutionController solutionController = loader.getController();
-
-            // Pass the shared Board instance to the SolutionController
-            solutionController.setBoard(board);
-
             // Open the new window
             Stage solutionStage = new Stage();
             solutionStage.setTitle("Solution");
@@ -497,6 +491,10 @@ public class GameController {
             Stage gameStage = (Stage) card1_0.getScene().getWindow(); // Reference primary stage
             solutionStage.setX(gameStage.getX() + gameStage.getWidth() - 15); // Position next to game window
             solutionStage.setY(gameStage.getY()); // Align vertically with the game window
+
+            // Ensure display works with the solution root instead of game elements
+            GameController solutionController = loader.getController(); // Get controller for the solution.fxml
+            solutionController.display(animalImages, board.getSolution());
 
             solutionStage.show();
         } catch (IOException e) {
