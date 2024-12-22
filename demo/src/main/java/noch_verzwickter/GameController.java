@@ -478,6 +478,9 @@ public class GameController {
         App.setRoot("menu");
     }
 
+    // Add a class-level variable for the solution stage
+    private Stage solutionStage;
+    
     @FXML
     private void showSolution() throws IOException {
         try {
@@ -485,7 +488,7 @@ public class GameController {
             Parent root = loader.load();
 
             // Open the new window
-            Stage solutionStage = new Stage();
+            solutionStage = new Stage();
             solutionStage.setTitle("Solution");
             solutionStage.setScene(new Scene(root));
 
@@ -549,101 +552,119 @@ public class GameController {
         }
 
         return invalidConditions.isEmpty();
-    }
-    @FXML
-    private void validCheck(ActionEvent event) {
+        }
+        @FXML
+        private void validCheck(ActionEvent event) {
         ArrayList<int[]> invalidCards = new ArrayList<int[]>();
         boolean isValid = checkingBoard(board.getElementArray(), invalidCards); // Call the validation method
-
+        
         // Find or create a label to display the result
         Label resultLabel = new Label();
         resultLabel.setText(isValid ? "Valid" : "Invalid");
         resultLabel.setStyle(isValid ? "-fx-text-fill: green;" : "-fx-text-fill: red;");
         resultLabel.setFont(new Font("Comic Sans MS Bold Italic", 15));
-        resultLabel.setLayoutX(344); // Align near the CHECK button
-        resultLabel.setLayoutY(680); // Adjust layoutY slightly below the button
+        resultLabel.setLayoutX(350); // Align near the CHECK button
+        resultLabel.setLayoutY(670); // Adjust layoutY slightly below the button
 
-        // Add the label to the root or parent container
+        // Remove any existing result label before adding the new one
         Parent root = ((Button) event.getSource()).getScene().getRoot();
         if (root instanceof Pane) {
             Pane pane = (Pane) root;
+            pane.getChildren().removeIf(node -> node instanceof Label && "resultLabel".equals(node.getId()));
+            resultLabel.setId("resultLabel");
             pane.getChildren().add(resultLabel);
         }
+        // Reset result label after 5 seconds
+        if (!isValid) {
+            PauseTransition pauseLabel = new PauseTransition(Duration.seconds(5));
+            pauseLabel.setOnFinished(e -> resultLabel.setText(""));
+            pauseLabel.play();
+        }
+        
         // Clear all borders
         for (Label label : labels) {
             label.setStyle(null);
         }
-
+        
         // Add border to invalid cards
         for (int[] invalidPairs : invalidCards) {
             if (Arrays.equals(invalidPairs, new int[]{0, 1, 1, 3})) {
-                labels.get(3).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(16).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(3).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(16).setStyle("-fx-border-color: red; -fx-border-width: 2");
         
             }
             if (Arrays.equals(invalidPairs, new int[]{0, 2, 3, 0})) {
-                labels.get(5).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(28).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(5).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(28).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{1, 1, 2, 3})) {
-                labels.get(12).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(25).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(12).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(25).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{1, 2, 4, 0})) {
-                labels.get(14).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(37).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(14).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(37).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{2, 2, 5, 0})) {
-                labels.get(23).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(46).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(23).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(46).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{3, 1, 4, 3})) {
-                labels.get(30).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(43).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(30).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(43).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{3, 2, 6, 0})) {
-                labels.get(32).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(55).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(32).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(55).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{4, 1, 5, 3})) {
-                labels.get(39).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(52).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(39).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(52).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{4, 2, 7, 0})) {
-                labels.get(41).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(64).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(41).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(64).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{5, 2, 8, 0})) {
-                labels.get(50).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(73).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(50).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(73).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{6, 1, 7, 3})) {
-                labels.get(57).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(70).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(57).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(70).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
             if (Arrays.equals(invalidPairs, new int[]{7, 1, 8, 3})) {
-                labels.get(66).setStyle("-fx-border-color: red; -fx-border-width: 2");
-                labels.get(79).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(66).setStyle("-fx-border-color: red; -fx-border-width: 2");
+            labels.get(79).setStyle("-fx-border-color: red; -fx-border-width: 2");
 
             }
         }
-            // Reset borders after 5 seconds
+        // Set green background for valid cards
+        if (isValid) {
+            for (Label label : labels) {
+            label.setStyle("-fx-border-color: green; -fx-border-width: 2");
+            }
+            return;
+        }
+        
+        
+        // Reset borders after 5 seconds
         PauseTransition pause = new PauseTransition(Duration.seconds(5));
         pause.setOnFinished(e -> resetCardBorders());
         pause.play();
-    }
+        }
 
-    private void resetCardBorders() {
+        private void resetCardBorders() {
         for (Label label : labels) {
             label.setStyle("-fx-border-color: transparent;");
         }
@@ -651,6 +672,13 @@ public class GameController {
 
     @FXML
     private void restartGame() throws IOException {
+        // Close the Solution window if it is opened
+        if (solutionStage != null) {
+            solutionStage.close();
+            solutionStage = null; // Reset the reference
+        }
+
+        // Restart the game
         App.setRoot("game");
     }
 }
