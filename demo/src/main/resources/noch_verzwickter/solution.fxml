@@ -24,7 +24,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 1; -fx-border-style: solid;">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 2; -fx-border-style: solid;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <children>
                   <GridPane layoutX="-1.0" layoutY="-1.0" prefHeight="150.0" prefWidth="150.0">
                     <columnConstraints>
@@ -38,20 +38,20 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="card1_0" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="0" />
-                        <Label fx:id="card1_1" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label fx:id="card1_2" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" />
-                        <Label fx:id="card1_3" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="card1_4" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="card1_5" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="card1_6" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="card1_7" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="card1_8" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="card1_0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card1_1" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card1_2" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card1_3" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card1_4" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card1_5" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card1_6" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card1_7" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card1_8" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                      </children>
                   </GridPane>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 1; -fx-border-style: solid;" GridPane.columnIndex="1">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 2; -fx-border-style: solid;" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="1">
                <children>
                   <GridPane layoutY="-1.0" prefHeight="150.0" prefWidth="150.0">
                     <columnConstraints>
@@ -65,20 +65,20 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="card2_0" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="0" />
-                        <Label fx:id="card2_1" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label fx:id="card2_2" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" />
-                        <Label fx:id="card2_3" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="card2_4" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="card2_5" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="card2_6" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="card2_7" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="card2_8" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="card2_0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card2_1" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card2_2" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card2_3" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card2_4" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card2_5" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card2_6" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card2_7" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card2_8" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                      </children>
                   </GridPane>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 1; -fx-border-style: solid;" GridPane.columnIndex="2">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 2; -fx-border-style: solid;" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="2">
                <children>
                   <GridPane layoutY="-1.0" prefHeight="150.0" prefWidth="150.0">
                     <columnConstraints>
@@ -92,20 +92,20 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="card3_0" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="0" />
-                        <Label fx:id="card3_1" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label fx:id="card3_2" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" />
-                        <Label fx:id="card3_3" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="card3_4" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="card3_5" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="card3_6" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="card3_7" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="card3_8" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="card3_0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card3_1" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card3_2" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card3_3" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card3_4" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card3_5" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card3_6" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card3_7" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card3_8" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                      </children>
                   </GridPane>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 1; -fx-border-style: solid;" GridPane.rowIndex="1">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 2; -fx-border-style: solid;" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="1">
                <children>
                   <GridPane layoutX="-1.0" layoutY="-1.0" prefHeight="150.0" prefWidth="150.0">
                     <columnConstraints>
@@ -119,20 +119,20 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="card4_0" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="0" />
-                        <Label fx:id="card4_1" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label fx:id="card4_2" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" />
-                        <Label fx:id="card4_3" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="card4_4" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="card4_5" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="card4_6" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="card4_7" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="card4_8" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="card4_0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card4_1" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card4_2" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card4_3" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card4_4" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card4_5" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card4_6" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card4_7" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card4_8" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                      </children>
                   </GridPane>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 1; -fx-border-style: solid;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 2; -fx-border-style: solid;" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <GridPane layoutX="-1.0" layoutY="-1.0" prefHeight="150.0" prefWidth="150.0">
                     <columnConstraints>
@@ -146,20 +146,20 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="card5_0" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="0" />
-                        <Label fx:id="card5_1" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label fx:id="card5_2" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" />
-                        <Label fx:id="card5_3" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="card5_4" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="card5_5" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="card5_6" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="card5_7" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="card5_8" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="card5_0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card5_1" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card5_2" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card5_3" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card5_4" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card5_5" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card5_6" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card5_7" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card5_8" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                      </children>
                   </GridPane>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 1; -fx-border-style: solid;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 2; -fx-border-style: solid;" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
                   <GridPane layoutX="-1.0" layoutY="-1.0" prefHeight="150.0" prefWidth="150.0">
                     <columnConstraints>
@@ -173,20 +173,20 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="card6_0" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="0" />
-                        <Label fx:id="card6_1" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label fx:id="card6_2" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" />
-                        <Label fx:id="card6_3" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="card6_4" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="card6_5" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="card6_6" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="card6_7" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="card6_8" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="card6_0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card6_1" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card6_2" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card6_3" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card6_4" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card6_5" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card6_6" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card6_7" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card6_8" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                      </children>
                   </GridPane>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 1; -fx-border-style: solid;" GridPane.rowIndex="2">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 2; -fx-border-style: solid;" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.rowIndex="2">
                <children>
                   <GridPane layoutX="-1.0" layoutY="-1.0" prefHeight="150.0" prefWidth="150.0">
                     <columnConstraints>
@@ -200,20 +200,20 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="card7_0" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="0" />
-                        <Label fx:id="card7_1" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label fx:id="card7_2" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" />
-                        <Label fx:id="card7_3" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="card7_4" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="card7_5" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="card7_6" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="card7_7" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="card7_8" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="card7_0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card7_1" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card7_2" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card7_3" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card7_4" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card7_5" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card7_6" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card7_7" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card7_8" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                      </children>
                   </GridPane>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 1; -fx-border-style: solid;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 2; -fx-border-style: solid;" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
                   <GridPane layoutX="-1.0" layoutY="-1.0" prefHeight="150.0" prefWidth="150.0">
                     <columnConstraints>
@@ -227,20 +227,20 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="card8_0" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="0" />
-                        <Label fx:id="card8_1" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label fx:id="card8_2" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" />
-                        <Label fx:id="card8_3" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="card8_4" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="card8_5" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="card8_6" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="card8_7" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="card8_8" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="card8_0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card8_1" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card8_2" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card8_3" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card8_4" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card8_5" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card8_6" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card8_7" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card8_8" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                      </children>
                   </GridPane>
                </children>
             </Pane>
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 1; -fx-border-style: solid;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: darkgrey; -fx-border-width: 2; -fx-border-style: solid;" GridPane.halignment="CENTER" GridPane.valignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
                   <GridPane layoutX="-1.0" layoutY="-1.0" prefHeight="150.0" prefWidth="150.0">
                     <columnConstraints>
@@ -254,15 +254,15 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="card9_0" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="0" />
-                        <Label fx:id="card9_1" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" />
-                        <Label fx:id="card9_2" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" />
-                        <Label fx:id="card9_3" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label fx:id="card9_4" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Label fx:id="card9_5" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="card9_6" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="2" />
-                        <Label fx:id="card9_7" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.rowIndex="1" />
-                        <Label fx:id="card9_8" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="card9_0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card9_1" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card9_2" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card9_3" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card9_4" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card9_5" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card9_6" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card9_7" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+                        <Label fx:id="card9_8" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
                      </children>
                   </GridPane>
                </children>

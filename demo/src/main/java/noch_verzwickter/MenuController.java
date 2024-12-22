@@ -9,6 +9,7 @@ public class MenuController {
     @FXML
     private void newGame() throws IOException {
         App.setRoot("game");
+        App.getPrimaryStage().setTitle("Noch Verzwickter");
     }
 
     @FXML

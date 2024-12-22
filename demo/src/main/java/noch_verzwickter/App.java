@@ -11,10 +11,12 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    private static Stage primaryStage;
 
     @Override
     public void start(@SuppressWarnings("exports") Stage stage) throws IOException {
         scene = new Scene(loadFXML("menu"));
+        primaryStage = stage;
         stage.setScene(scene);
         stage.show();
 
@@ -40,5 +42,10 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    @SuppressWarnings("exports")
+    public static Stage getPrimaryStage() {
+        return primaryStage;
     }
 }
