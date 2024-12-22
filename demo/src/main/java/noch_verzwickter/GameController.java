@@ -4,14 +4,20 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+import javafx.animation.PauseTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.image.WritableImage;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -492,9 +498,154 @@ public class GameController {
             GameController solutionController = loader.getController(); // Get controller for the solution.fxml
             solutionController.display(animalImages, board.getSolution());
 
+            for (Label label : solutionController.labels) {
+                label.setOnMouseClicked(null);
+                label.setOnDragDetected(null);
+                label.setOnMouseDragReleased(null);
+                }
+                
             solutionStage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private boolean checkingBoard(ArrayList<ArrayList<Integer>> elementArray, ArrayList<int[]> invalidConditions) {
+        boolean[] validCond = {
+            (elementArray.get(0).get(1) == (-elementArray.get(1).get(3))),
+            (elementArray.get(0).get(2) == (-elementArray.get(3).get(0))),
+            (elementArray.get(1).get(1) == (-elementArray.get(2).get(3))),
+            (elementArray.get(1).get(2) == (-elementArray.get(4).get(0))),
+            (elementArray.get(2).get(2) == (-elementArray.get(5).get(0))),
+            (elementArray.get(3).get(1) == (-elementArray.get(4).get(3))),
+            (elementArray.get(3).get(2) == (-elementArray.get(6).get(0))),
+            (elementArray.get(4).get(1) == (-elementArray.get(5).get(3))),
+            (elementArray.get(4).get(2) == (-elementArray.get(7).get(0))),
+            (elementArray.get(5).get(2) == (-elementArray.get(8).get(0))),
+            (elementArray.get(6).get(1) == (-elementArray.get(7).get(3))),
+            (elementArray.get(7).get(1) == (-elementArray.get(8).get(3)))
+        };
+
+        invalidConditions.clear();
+
+        for (int i = 0; i < validCond.length; i++) {
+            if (!validCond[i]) {
+                switch (i) {
+                    case 0: invalidConditions.add(new int[]{0, 1, 1, 3}); break;
+                    case 1: invalidConditions.add(new int[]{0, 2, 3, 0}); break;
+                    case 2: invalidConditions.add(new int[]{1, 1, 2, 3}); break;
+                    case 3: invalidConditions.add(new int[]{1, 2, 4, 0}); break;
+                    case 4: invalidConditions.add(new int[]{2, 2, 5, 0}); break;
+                    case 5: invalidConditions.add(new int[]{3, 1, 4, 3}); break;
+                    case 6: invalidConditions.add(new int[]{3, 2, 6, 0}); break;
+                    case 7: invalidConditions.add(new int[]{4, 1, 5, 3}); break;
+                    case 8: invalidConditions.add(new int[]{4, 2, 7, 0}); break;
+                    case 9: invalidConditions.add(new int[]{5, 2, 8, 0}); break;
+                    case 10: invalidConditions.add(new int[]{6, 1, 7, 3}); break;
+                    case 11: invalidConditions.add(new int[]{7, 1, 8, 3}); break;
+                }
+            }
+        }
+
+        return invalidConditions.isEmpty();
+    }
+    @FXML
+    private void validCheck(ActionEvent event) {
+        ArrayList<int[]> invalidCards = new ArrayList<int[]>();
+        boolean isValid = checkingBoard(board.getElementArray(), invalidCards); // Call the validation method
+
+        // Find or create a label to display the result
+        Label resultLabel = new Label();
+        resultLabel.setText(isValid ? "Valid" : "Invalid");
+        resultLabel.setStyle(isValid ? "-fx-text-fill: green;" : "-fx-text-fill: red;");
+        resultLabel.setFont(new Font("Comic Sans MS Bold Italic", 15));
+        resultLabel.setLayoutX(344); // Align near the CHECK button
+        resultLabel.setLayoutY(680); // Adjust layoutY slightly below the button
+
+        // Add the label to the root or parent container
+        Parent root = ((Button) event.getSource()).getScene().getRoot();
+        if (root instanceof Pane) {
+            Pane pane = (Pane) root;
+            pane.getChildren().add(resultLabel);
+        }
+        // Clear all borders
+        for (Label label : labels) {
+            label.setStyle(null);
+        }
+
+        // Add border to invalid cards
+        for (int[] invalidPairs : invalidCards) {
+            if (Arrays.equals(invalidPairs, new int[]{0, 1, 1, 3})) {
+                labels.get(3).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(16).setStyle("-fx-border-color: red; -fx-border-width: 2");
+        
+            }
+            if (Arrays.equals(invalidPairs, new int[]{0, 2, 3, 0})) {
+                labels.get(5).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(28).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{1, 1, 2, 3})) {
+                labels.get(12).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(25).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{1, 2, 4, 0})) {
+                labels.get(14).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(37).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{2, 2, 5, 0})) {
+                labels.get(23).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(46).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{3, 1, 4, 3})) {
+                labels.get(30).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(43).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{3, 2, 6, 0})) {
+                labels.get(32).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(55).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{4, 1, 5, 3})) {
+                labels.get(39).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(52).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{4, 2, 7, 0})) {
+                labels.get(41).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(64).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{5, 2, 8, 0})) {
+                labels.get(50).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(73).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{6, 1, 7, 3})) {
+                labels.get(57).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(70).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+            if (Arrays.equals(invalidPairs, new int[]{7, 1, 8, 3})) {
+                labels.get(66).setStyle("-fx-border-color: red; -fx-border-width: 2");
+                labels.get(79).setStyle("-fx-border-color: red; -fx-border-width: 2");
+
+            }
+        }
+            // Reset borders after 5 seconds
+        PauseTransition pause = new PauseTransition(Duration.seconds(5));
+        pause.setOnFinished(e -> resetCardBorders());
+        pause.play();
+    }
+
+    private void resetCardBorders() {
+        for (Label label : labels) {
+            label.setStyle("-fx-border-color: transparent;");
         }
     }
 
