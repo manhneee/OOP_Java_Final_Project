@@ -1,19 +1,25 @@
 package noch_verzwickter;
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
-import javafx.scene.image.WritableImage;
+import javafx.scene.Parent;
 // import javafx.scene.image.PixelReader;
 // import javafx.scene.image.PixelWriter;
 // import javafx.scene.transform.Rotate;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 
 public class GameController {
     @FXML
@@ -230,45 +236,49 @@ public class GameController {
         // Determine the current section
         int section = labelIndex / 9; // Each section spans 9 labels (0-8, 9-17, etc.)
         ArrayList<Integer> card = board.getElementArray().get(section);
-        board.rotateCard(card, 1, true);
+        board.rotateCard(card, 1, false);
         // Update the display
         display(animalImages, board.getElementArray());
         
     }
     
-
-
-
     @FXML
     private void handleDragDetected(Label label) {
         if (label == null) return; // Ensure label is not null
+
         dragSourceLabel = label; // Track the source label
         label.startFullDrag(); // Start the drag process
     }
 
-
     @FXML
     private void handleDragDropped(Label targetLabel) {
-        if (dragSourceLabel == null || targetLabel == null) return;
+        if (dragSourceLabel == null || targetLabel == null) return; // Ensure both labels are valid
 
+        // Get source and target indices
         int sourceIndex = labels.indexOf(dragSourceLabel);
         int targetIndex = labels.indexOf(targetLabel);
 
-        if (sourceIndex == -1 || targetIndex == -1) return; // Ensure valid indices
+        // Validate indices
+        if (sourceIndex == -1 || targetIndex == -1) return;
 
-        int sourceCardIndex = sourceIndex / 9; // Adjust based on group size
+        // Determine the card indices
+        int sourceCardIndex = sourceIndex / 9; // Adjust based on your card grouping logic
         int targetCardIndex = targetIndex / 9;
 
-        // Ensure valid card indices
-        if (sourceCardIndex >= board.getElementArray().size() || targetCardIndex >= board.getElementArray().size()) return;
-
-        // Swap the cards
+        // Validate card indices
         ArrayList<ArrayList<Integer>> elementArray = board.getElementArray();
+        if (sourceCardIndex >= elementArray.size() || targetCardIndex >= elementArray.size()) return;
+
+        // Perform the swap
         Collections.swap(elementArray, sourceCardIndex, targetCardIndex);
 
         // Update the display
-        display(animalImages, board.getElementArray());
+        display(animalImages, elementArray);
+
+        // Reset drag source
+        dragSourceLabel = null;
     }
+
 
     private Image rotateImage(Image inputImage, double angle, boolean clockwise) {
         // Calculate the actual rotation angle in degrees
@@ -342,17 +352,6 @@ public class GameController {
         // Get the image map from the AnimalImages instance
         HashMap<Integer, String> imageMap = animalImages.getImageMap();
 
-        // // Flatten the 2D elementArray into a single list
-        // ArrayList<Integer> flattenedElements = new ArrayList<>();
-        // for (ArrayList<Integer> row : elementArray) {
-        //     flattenedElements.addAll(row);
-        // }
-
-        // // Ensure the flattened array matches the number of labels
-        // if (flattenedElements.size() > labels.size()) {
-        //     throw new IllegalArgumentException("More elements in elementArray than available labels.");
-        // }
-
         // Iterate through the flattened elements and set images to labels
         int labelCount = 0;
         int trackingCard = 1;
@@ -399,6 +398,25 @@ public class GameController {
         }
     }
 
+    private boolean checkingBoard(ArrayList<ArrayList<Integer>> elementArray){
+        boolean[] validCond = {(elementArray.get(0).get(1) == (-elementArray.get(1).get(3))),
+                                (elementArray.get(0).get(2) == (-elementArray.get(3).get(0))),
+                                (elementArray.get(1).get(1) == (-elementArray.get(2).get(3))),
+                                (elementArray.get(1).get(2) == (-elementArray.get(4).get(0))),
+                                (elementArray.get(2).get(2) == (-elementArray.get(5).get(0))),
+                                (elementArray.get(3).get(1) == (-elementArray.get(4).get(3))),
+                                (elementArray.get(3).get(2) == (-elementArray.get(6).get(0))),
+                                (elementArray.get(4).get(1) == (-elementArray.get(5).get(3))),
+                                (elementArray.get(4).get(2) == (-elementArray.get(7).get(0))),
+                                (elementArray.get(5).get(2) == (-elementArray.get(8).get(0))),
+                                (elementArray.get(6).get(1) == (-elementArray.get(7).get(3))),
+                                (elementArray.get(7).get(1) == (-elementArray.get(8).get(3)))};
+        for(boolean cond: validCond){
+            if(!cond){return false;}
+        }
+        return true;
+    }
+
     @FXML
     private void goBack() throws IOException {
         App.setRoot("menu");
@@ -408,4 +426,26 @@ public class GameController {
     private void showSolution() throws IOException {
         display(animalImages, board.getSolution());
     }
+
+    @FXML
+    private void checking(ActionEvent event) {
+        boolean isValid = checkingBoard(board.getElementArray()); // Call the validation method
+
+        // Find or create a label to display the result
+        Label resultLabel = new Label();
+        resultLabel.setText(isValid ? "Valid" : "Invalid");
+        resultLabel.setStyle(isValid ? "-fx-text-fill: green;" : "-fx-text-fill: red;");
+        resultLabel.setFont(new Font("Comic Sans MS Bold Italic", 15));
+        resultLabel.setLayoutX(344); // Align near the CHECK button
+        resultLabel.setLayoutY(680); // Adjust layoutY slightly below the button
+
+        // Add the label to the root or parent container
+        Parent root = ((Button) event.getSource()).getScene().getRoot();
+        if (root instanceof Pane) {
+            Pane pane = (Pane) root;
+            pane.getChildren().add(resultLabel);
+        }
+    }
+
 }
+

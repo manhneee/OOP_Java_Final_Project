@@ -168,6 +168,7 @@ public class Board {
         return temparray;
     }
 
+
     public ArrayList<ArrayList<Integer>> getElementArray() {
         return this.elementArray;
     }

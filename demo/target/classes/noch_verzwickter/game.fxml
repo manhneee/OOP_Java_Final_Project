@@ -279,10 +279,11 @@
             <Font name="Comic Sans MS Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="344.0" layoutY="640.0" mnemonicParsing="false" text="CHECK" textFill="#64e664">
+      <Button layoutX="344.0" layoutY="640.0" mnemonicParsing="false" onAction="#checking" text="CHECK" textFill="#64e664">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="15.0" />
          </font>
       </Button>
+      <Pane fx:id="resultPane" layoutX="344.0" layoutY="680.0" prefWidth="200" prefHeight="50" />
    </children>
 </Pane>
