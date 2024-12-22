@@ -1,17 +1,19 @@
 package noch_verzwickter;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.image.WritableImage;
-// import javafx.scene.image.PixelReader;
-// import javafx.scene.image.PixelWriter;
-// import javafx.scene.transform.Rotate;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -35,7 +37,6 @@ public class GameController {
     @FXML
     private Label card1_8;
 
-
     @FXML
     private Label card2_0;
     @FXML
@@ -55,7 +56,6 @@ public class GameController {
     @FXML
     private Label card2_8;
 
-
     @FXML
     private Label card3_0;
     @FXML
@@ -74,7 +74,6 @@ public class GameController {
     private Label card3_7;
     @FXML
     private Label card3_8;
-
 
     @FXML
     private Label card4_0;
@@ -198,34 +197,111 @@ public class GameController {
     @FXML
     public void initialize() {
         labels = new ArrayList<>();
-    
+
         // Add all labels to the list
-        labels.add(card1_0); labels.add(card1_1); labels.add(card1_2); labels.add(card1_3); labels.add(card1_4); labels.add(card1_5); labels.add(card1_6); labels.add(card1_7); labels.add(card1_8);
-        labels.add(card2_0); labels.add(card2_1); labels.add(card2_2); labels.add(card2_3); labels.add(card2_4); labels.add(card2_5); labels.add(card2_6); labels.add(card2_7); labels.add(card2_8);
-        labels.add(card3_0); labels.add(card3_1); labels.add(card3_2); labels.add(card3_3); labels.add(card3_4); labels.add(card3_5); labels.add(card3_6); labels.add(card3_7); labels.add(card3_8);
-        labels.add(card4_0); labels.add(card4_1); labels.add(card4_2); labels.add(card4_3); labels.add(card4_4); labels.add(card4_5); labels.add(card4_6); labels.add(card4_7); labels.add(card4_8);
-        labels.add(card5_0); labels.add(card5_1); labels.add(card5_2); labels.add(card5_3); labels.add(card5_4); labels.add(card5_5); labels.add(card5_6); labels.add(card5_7); labels.add(card5_8);
-        labels.add(card6_0); labels.add(card6_1); labels.add(card6_2); labels.add(card6_3); labels.add(card6_4); labels.add(card6_5); labels.add(card6_6); labels.add(card6_7); labels.add(card6_8);
-        labels.add(card7_0); labels.add(card7_1); labels.add(card7_2); labels.add(card7_3); labels.add(card7_4); labels.add(card7_5); labels.add(card7_6); labels.add(card7_7); labels.add(card7_8);
-        labels.add(card8_0); labels.add(card8_1); labels.add(card8_2); labels.add(card8_3); labels.add(card8_4); labels.add(card8_5); labels.add(card8_6); labels.add(card8_7); labels.add(card8_8);
-        labels.add(card9_0); labels.add(card9_1); labels.add(card9_2); labels.add(card9_3); labels.add(card9_4); labels.add(card9_5); labels.add(card9_6); labels.add(card9_7); labels.add(card9_8);
-    
+        labels.add(card1_0);
+        labels.add(card1_1);
+        labels.add(card1_2);
+        labels.add(card1_3);
+        labels.add(card1_4);
+        labels.add(card1_5);
+        labels.add(card1_6);
+        labels.add(card1_7);
+        labels.add(card1_8);
+        labels.add(card2_0);
+        labels.add(card2_1);
+        labels.add(card2_2);
+        labels.add(card2_3);
+        labels.add(card2_4);
+        labels.add(card2_5);
+        labels.add(card2_6);
+        labels.add(card2_7);
+        labels.add(card2_8);
+        labels.add(card3_0);
+        labels.add(card3_1);
+        labels.add(card3_2);
+        labels.add(card3_3);
+        labels.add(card3_4);
+        labels.add(card3_5);
+        labels.add(card3_6);
+        labels.add(card3_7);
+        labels.add(card3_8);
+        labels.add(card4_0);
+        labels.add(card4_1);
+        labels.add(card4_2);
+        labels.add(card4_3);
+        labels.add(card4_4);
+        labels.add(card4_5);
+        labels.add(card4_6);
+        labels.add(card4_7);
+        labels.add(card4_8);
+        labels.add(card5_0);
+        labels.add(card5_1);
+        labels.add(card5_2);
+        labels.add(card5_3);
+        labels.add(card5_4);
+        labels.add(card5_5);
+        labels.add(card5_6);
+        labels.add(card5_7);
+        labels.add(card5_8);
+        labels.add(card6_0);
+        labels.add(card6_1);
+        labels.add(card6_2);
+        labels.add(card6_3);
+        labels.add(card6_4);
+        labels.add(card6_5);
+        labels.add(card6_6);
+        labels.add(card6_7);
+        labels.add(card6_8);
+        labels.add(card7_0);
+        labels.add(card7_1);
+        labels.add(card7_2);
+        labels.add(card7_3);
+        labels.add(card7_4);
+        labels.add(card7_5);
+        labels.add(card7_6);
+        labels.add(card7_7);
+        labels.add(card7_8);
+        labels.add(card8_0);
+        labels.add(card8_1);
+        labels.add(card8_2);
+        labels.add(card8_3);
+        labels.add(card8_4);
+        labels.add(card8_5);
+        labels.add(card8_6);
+        labels.add(card8_7);
+        labels.add(card8_8);
+        labels.add(card9_0);
+        labels.add(card9_1);
+        labels.add(card9_2);
+        labels.add(card9_3);
+        labels.add(card9_4);
+        labels.add(card9_5);
+        labels.add(card9_6);
+        labels.add(card9_7);
+        labels.add(card9_8);
+
         animalImages = new AnimalImages();
         board = new Board();
         display(animalImages, board.getElementArray());
-    
+
         // Attach interaction handlers
         for (Label label : labels) {
-             label.setOnMouseClicked(event -> handleLabelClick(label)); // Rotation
-             label.setOnDragDetected(event -> handleDragDetected(label)); // Drag start
-             label.setOnMouseDragReleased(event -> handleDragDropped(label)); // Drop
+            label.setOnMouseClicked(event -> handleLabelClick(label)); // Rotation
+            label.setOnDragDetected(event -> handleDragDetected(label)); // Drag start
+            label.setOnMouseDragReleased(event -> handleDragDropped(label)); // Drop
         }
+    }
+
+    public Board getBoard() {
+        return board;
     }
 
     @FXML
     private void handleLabelClick(Label label) {
         int labelIndex = labels.indexOf(label); // Find the label's index
-        if (labelIndex == -1) return; // Ensure label exists in the list
+        if (labelIndex == -1)
+            return; // Ensure label exists in the list
 
         // Determine the current section
         int section = labelIndex / 9; // Each section spans 9 labels (0-8, 9-17, etc.)
@@ -233,34 +309,34 @@ public class GameController {
         board.rotateCard(card, 1, true);
         // Update the display
         display(animalImages, board.getElementArray());
-        
+
     }
-    
-
-
 
     @FXML
     private void handleDragDetected(Label label) {
-        if (label == null) return; // Ensure label is not null
+        if (label == null)
+            return; // Ensure label is not null
         dragSourceLabel = label; // Track the source label
         label.startFullDrag(); // Start the drag process
     }
 
-
     @FXML
     private void handleDragDropped(Label targetLabel) {
-        if (dragSourceLabel == null || targetLabel == null) return;
+        if (dragSourceLabel == null || targetLabel == null)
+            return;
 
         int sourceIndex = labels.indexOf(dragSourceLabel);
         int targetIndex = labels.indexOf(targetLabel);
 
-        if (sourceIndex == -1 || targetIndex == -1) return; // Ensure valid indices
+        if (sourceIndex == -1 || targetIndex == -1)
+            return; // Ensure valid indices
 
         int sourceCardIndex = sourceIndex / 9; // Adjust based on group size
         int targetCardIndex = targetIndex / 9;
 
         // Ensure valid card indices
-        if (sourceCardIndex >= board.getElementArray().size() || targetCardIndex >= board.getElementArray().size()) return;
+        if (sourceCardIndex >= board.getElementArray().size() || targetCardIndex >= board.getElementArray().size())
+            return;
 
         // Swap the cards
         ArrayList<ArrayList<Integer>> elementArray = board.getElementArray();
@@ -273,53 +349,55 @@ public class GameController {
     private Image rotateImage(Image inputImage, double angle, boolean clockwise) {
         // Calculate the actual rotation angle in degrees
         double rotationAngle = clockwise ? angle : -angle;
-    
+
         // Original image dimensions
         double width = inputImage.getWidth();
         double height = inputImage.getHeight();
-    
+
         // Calculate the dimensions of the rotated image's bounding box
         double radians = Math.toRadians(rotationAngle);
         double sin = Math.abs(Math.sin(radians));
         double cos = Math.abs(Math.cos(radians));
         double newWidth = width * cos + height * sin;
         double newHeight = width * sin + height * cos;
-    
+
         // Create a canvas large enough to hold the rotated image
         Canvas canvas = new Canvas(newWidth, newHeight);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-    
+
         // Translate the canvas to the center of the new bounding box
         gc.translate(newWidth / 2, newHeight / 2);
-    
+
         // Rotate around the center
         gc.rotate(rotationAngle);
-    
+
         // Draw the original image at the center
         gc.translate(-width / 2, -height / 2);
         gc.drawImage(inputImage, 0, 0);
-    
+
         // Capture the result as a WritableImage
         WritableImage rotatedImage = new WritableImage((int) newWidth, (int) newHeight);
         canvas.snapshot(null, rotatedImage);
-    
+
         return rotatedImage;
     }
 
-    
-    private Image imageAdjustment(Image img, int keyImage, int labelCount){
-        if(labelCount == 0){
+    private Image imageAdjustment(Image img, int keyImage, int labelCount) {
+        if (labelCount == 0) {
             return rotateImage(img, 90, (keyImage > 0));
-        } else if (labelCount == 1 && keyImage > 0){
+        } else if (labelCount == 1 && keyImage > 0) {
             return rotateImage(img, 180, true);
-        } else if (labelCount  == 2){
+        } else if (labelCount == 2) {
             return rotateImage(img, 90, (keyImage < 0));
-        } else if (labelCount == 3 && keyImage < 0){
+        } else if (labelCount == 3 && keyImage < 0) {
             return rotateImage(img, 180, false);
-        } else {return img;}
+        } else {
+            return img;
+        }
     }
 
-    public void setImageToLabel(@SuppressWarnings("exports") Label label, String imagePath, int keyImage, int labelCount) {
+    public void setImageToLabel(@SuppressWarnings("exports") Label label, String imagePath, int keyImage,
+            int labelCount) {
         // Load the image
         URL resourceURL = getClass().getResource(imagePath);
         if (resourceURL == null) {
@@ -328,39 +406,29 @@ public class GameController {
         Image img = imageAdjustment(new Image(resourceURL.toExternalForm()), keyImage, labelCount);
         // Create new ImageView
         ImageView imgView = new ImageView(img);
-        
 
         label.setGraphic(imgView);
     }
 
     public void display(AnimalImages animalImages, ArrayList<ArrayList<Integer>> elementArray) {
-        /* The new grid will be 
-               0        1(image)  2
-               7(image) 8         3(image)
-               6        5(image)  4
+        /*
+         * The new grid will be
+         * 0 1(image) 2
+         * 7(image) 8 3(image)
+         * 6 5(image) 4
          */
         // Get the image map from the AnimalImages instance
         HashMap<Integer, String> imageMap = animalImages.getImageMap();
-
-        // // Flatten the 2D elementArray into a single list
-        // ArrayList<Integer> flattenedElements = new ArrayList<>();
-        // for (ArrayList<Integer> row : elementArray) {
-        //     flattenedElements.addAll(row);
-        // }
-
-        // // Ensure the flattened array matches the number of labels
-        // if (flattenedElements.size() > labels.size()) {
-        //     throw new IllegalArgumentException("More elements in elementArray than available labels.");
-        // }
 
         // Iterate through the flattened elements and set images to labels
         int labelCount = 0;
         int trackingCard = 1;
         for (int i = 0; i < labels.size(); i++) {
             // Stop if trackingCard exceeds the number of groups in elementArray
-            if (trackingCard > elementArray.size()) break;
+            if (trackingCard > elementArray.size())
+                break;
 
-            if (trackingCard % 2 == 1 && i % 2 ==1){ 
+            if (trackingCard % 2 == 1 && i % 2 == 1) {
                 int key = elementArray.get((trackingCard - 1)).get(labelCount);
                 Label label = labels.get(i);
                 if (imageMap.containsKey(key)) {
@@ -371,14 +439,14 @@ public class GameController {
                     label.setGraphic(null); // Clear the label graphic if key not found
                 }
                 labelCount++;
-                if(labelCount == 4){
+                if (labelCount == 4) {
                     labelCount = 0;
                     trackingCard++;
                     i++;
                 }
-                
-            } else if(trackingCard % 2 == 0){
-                if(i % 2 == 0){
+
+            } else if (trackingCard % 2 == 0) {
+                if (i % 2 == 0) {
                     int key = elementArray.get((trackingCard - 1)).get(labelCount);
                     Label label = labels.get(i);
                     if (imageMap.containsKey(key)) {
@@ -389,13 +457,13 @@ public class GameController {
                         label.setGraphic(null); // Clear the label graphic if key not found
                     }
                     labelCount++;
-                    if(labelCount == 4){
+                    if (labelCount == 4) {
                         labelCount = 0;
                         trackingCard++;
                         i++;
                     }
                 }
-            } 
+            }
         }
     }
 
@@ -406,6 +474,34 @@ public class GameController {
 
     @FXML
     private void showSolution() throws IOException {
-        display(animalImages, board.getSolution());
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("solution.fxml"));
+            Parent root = loader.load();
+
+            // Access the SolutionController
+            SolutionController solutionController = loader.getController();
+
+            // Pass the shared Board instance to the SolutionController
+            solutionController.setBoard(board);
+
+            // Open the new window
+            Stage solutionStage = new Stage();
+            solutionStage.setTitle("Solution");
+            solutionStage.setScene(new Scene(root));
+
+            // Position the new window next to the game window
+            Stage gameStage = (Stage) card1_0.getScene().getWindow(); // Reference primary stage
+            solutionStage.setX(gameStage.getX() + gameStage.getWidth() - 15); // Position next to game window
+            solutionStage.setY(gameStage.getY()); // Align vertically with the game window
+
+            solutionStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void restartGame() throws IOException {
+        App.setRoot("game");
     }
 }

@@ -269,7 +269,7 @@
             </Pane>
          </children>
       </GridPane>
-      <Button layoutX="45.0" layoutY="640.0" mnemonicParsing="false" onAction="#goBack" text="BACK" textFill="#ff6464">
+      <Button layoutX="45.0" layoutY="51.0" mnemonicParsing="false" onAction="#goBack" text="BACK" textFill="#ff6464">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="15.0" />
          </font>
@@ -282,6 +282,11 @@
       <Button layoutX="344.0" layoutY="640.0" mnemonicParsing="false" text="CHECK" textFill="#64e664">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="45.0" layoutY="640.0" mnemonicParsing="false" onAction="#restartGame" text="RESTART" textFill="DARKORANGE">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="14.0" />
          </font>
       </Button>
    </children>
