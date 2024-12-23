@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+import javafx.animation.Interpolator;
 import javafx.animation.PauseTransition;
+import javafx.animation.RotateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.image.WritableImage;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -299,19 +302,42 @@ public class GameController {
         }
     }
 
+    private GridPane getGridPaneFromLabel(Label label) {
+        if (label.getParent() instanceof GridPane) {
+            return (GridPane) label.getParent();
+        }
+        return null; // Return null if the parent is not a GridPane
+    }
+
     @FXML
     private void handleLabelClick(Label label) {
-        int labelIndex = labels.indexOf(label); // Find the label's index
-        if (labelIndex == -1)
-            return; // Ensure label exists in the list
+        GridPane cardPane = getGridPaneFromLabel(label);
+        if (cardPane == null) {
+            return;
+        }
+        // Card rotation animation class
+        RotateTransition rotateTransition = new RotateTransition(Duration.millis(200), cardPane);
+        rotateTransition.setByAngle(90);
+        rotateTransition.setCycleCount(1);
+        rotateTransition.setInterpolator(Interpolator.EASE_BOTH);
 
-        // Determine the current section
-        int section = labelIndex / 9; // Each section spans 9 labels (0-8, 9-17, etc.)
-        ArrayList<Integer> card = board.getElementArray().get(section);
-        board.rotateCard(card, 1, true);
-        // Update the display
-        display(animalImages, board.getElementArray());
+        rotateTransition.setOnFinished(event -> {
+            int labelIndex = labels.indexOf(label); // Find the label's index
+            if (labelIndex == -1) {
+                return; // Ensure label exists in the list
+            }
 
+            // Determine the current section
+            int section = labelIndex / 9; // Each section spans 9 labels (0-8, 9-17, etc.)
+            ArrayList<Integer> card = board.getElementArray().get(section);
+            board.rotateCard(card, 1, true);
+            // Update only the card content, not its rotation
+            cardPane.setRotate(0);
+            // Update the display
+            display(animalImages, board.getElementArray());
+        });
+
+        rotateTransition.play();
     }
 
     @FXML
