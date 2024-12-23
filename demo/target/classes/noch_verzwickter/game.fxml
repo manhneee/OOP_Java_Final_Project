@@ -286,7 +286,7 @@
       </Button>
       <Button layoutX="44.0" layoutY="640.0" mnemonicParsing="false" onAction="#restartGame" text="RESTART" textFill="DARKORANGE">
          <font>
-            <Font name="Comic Sans MS Bold Italic" size="14.0" />
+            <Font name="Comic Sans MS Bold Italic" size="15.0" />
          </font>
       </Button>
    </children>
