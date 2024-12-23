@@ -137,17 +137,17 @@ public class Board {
         for (int i = 0; i < rotations; i++) {
             int temp;
             if (clockwise) {
-                temp = array.get(0);
-                array.set(0, array.get(1));
-                array.set(1, array.get(2));
-                array.set(2, array.get(3));
-                array.set(3, temp);
-            } else {
                 temp = array.get(3);
                 array.set(3, array.get(2));
                 array.set(2, array.get(1));
                 array.set(1, array.get(0));
                 array.set(0, temp);
+            } else {
+                temp = array.get(0);
+                array.set(0, array.get(1));
+                array.set(1, array.get(2));
+                array.set(2, array.get(3));
+                array.set(3, temp);
             }
         }
     }
