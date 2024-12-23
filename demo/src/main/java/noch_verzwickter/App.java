@@ -23,7 +23,7 @@ public class App extends Application {
         // Adjusts the position of the window
         javafx.geometry.Rectangle2D screenBounds = javafx.stage.Screen.getPrimary().getVisualBounds();
         stage.setX((screenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((screenBounds.getHeight() - stage.getHeight()) / 8);
+        stage.setY((screenBounds.getHeight() - stage.getHeight()) / 10);
     }
 
     static void setRoot(String fxml) throws IOException {
