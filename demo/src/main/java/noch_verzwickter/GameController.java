@@ -201,9 +201,6 @@ public class GameController {
 
     private double originalCardPaneX;
     private double originalCardPaneY;
-    private double mouseAnchorX;
-    private double mouseAnchorY;
-
     private Label dragSourceLabel;
     private ArrayList<Label> labels;
     private AnimalImages animalImages;
@@ -303,7 +300,7 @@ public class GameController {
         // Attach interaction handlers
         for (Label label : labels) {
             label.setOnMouseClicked(event -> handleLabelClick(label)); // Rotation
-            label.setOnDragDetected(event -> handleDragDetected(event, label)); // Drag start
+            label.setOnDragDetected(event -> handleDragDetected(label)); // Drag start
             label.setOnMouseDragReleased(event -> handleDragDropped(label)); // Drop
         }
     }
@@ -347,13 +344,10 @@ public class GameController {
     }
 
     @FXML
-    private void handleDragDetected(MouseEvent event, Label label) {
+    private void handleDragDetected(Label label) {
         if (label == null)
             return; // Ensure label is not null
         dragSourceLabel = label; // Track the source label
-
-        mouseAnchorX = event.getSceneX();
-        mouseAnchorY = event.getSceneY();
 
         GridPane cardPane = getGridPaneFromLabel(label);
 
@@ -373,9 +367,8 @@ public class GameController {
         // Get the source pane (cardPane)
         GridPane cardPane = (GridPane) event.getSource();
 
-        // Update the position of the cardPane to follow the mouse
-        cardPane.setLayoutX(event.getSceneX() - mouseAnchorX);
-        cardPane.setLayoutY(event.getSceneY() - mouseAnchorY);
+        DraggableMaker draggableMaker = new DraggableMaker();
+        draggableMaker.makeDraggable(cardPane);
     }
 
     // Method to handle mouse release (stop following the mouse)
