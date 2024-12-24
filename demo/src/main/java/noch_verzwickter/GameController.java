@@ -349,7 +349,15 @@ public class GameController {
             return; // Ensure label is not null
         dragSourceLabel = label; // Track the source label
 
+        // Get label coordinates
+        double labelX = label.getLayoutX();
+        double labelY = label.getLayoutY();
+
         GridPane cardPane = getGridPaneFromLabel(label);
+
+        // Ensure the label has a parent GridPane
+        if (cardPane == null)
+            return;
 
         // Store the original position of the cardPane
         originalCardPaneX = cardPane.getLayoutX();
@@ -358,17 +366,16 @@ public class GameController {
         label.startFullDrag(); // Start the drag process
 
         // Start tracking the mouse for dragging
-        cardPane.setOnMouseDragged(this::handleMouseDrag);
+        cardPane.setOnMouseDragged(event -> handleMouseDrag(event, labelX, labelY));
         cardPane.setOnMouseReleased(this::handleMouseRelease);
     }
 
-    // Method to handle mouse dragging
-    private void handleMouseDrag(MouseEvent event) {
-        // Get the source pane (cardPane)
+    // Method to handle mouse drag
+    private void handleMouseDrag(MouseEvent event, double labelX, double labelY) {
         GridPane cardPane = (GridPane) event.getSource();
 
-        DraggableMaker draggableMaker = new DraggableMaker();
-        draggableMaker.makeDraggable(cardPane);
+        cardPane.setLayoutX(event.getSceneX() - labelX);
+        cardPane.setLayoutY(event.getSceneY() - labelY);
     }
 
     // Method to handle mouse release (stop following the mouse)
