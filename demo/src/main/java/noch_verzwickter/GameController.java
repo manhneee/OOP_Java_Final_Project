@@ -379,6 +379,7 @@ public class GameController {
         cardPane.setOnMouseDragged(null);
         cardPane.setOnMouseReleased(null);
 
+        // Sets the cardPane back to where it was from, for actual swap to happen
         cardPane.setLayoutX(originalCardPaneX);
         cardPane.setLayoutY(originalCardPaneY);
     }

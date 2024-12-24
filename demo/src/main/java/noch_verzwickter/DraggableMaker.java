@@ -8,8 +8,8 @@ public class DraggableMaker {
 
     public void makeDraggable(@SuppressWarnings("exports") Node node) {
         node.setOnMousePressed(mouseEvent -> {
-            mouseAnchorX = mouseEvent.getSceneX();
-            mouseAnchorY = mouseEvent.getSceneY();
+            mouseAnchorX = mouseEvent.getX();
+            mouseAnchorY = mouseEvent.getY();
         });
 
         node.setOnMouseDragged(mouseEvent -> {
