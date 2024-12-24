@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.image.WritableImage;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
@@ -198,6 +199,9 @@ public class GameController {
     @FXML
     private Label card9_8;
 
+    private double originalCardPaneX;
+    private double originalCardPaneY;
+
     private Label dragSourceLabel;
     private ArrayList<Label> labels;
     private AnimalImages animalImages;
@@ -345,7 +349,40 @@ public class GameController {
         if (label == null)
             return; // Ensure label is not null
         dragSourceLabel = label; // Track the source label
+
+        GridPane cardPane = getGridPaneFromLabel(label);
+
+        // Store the original position of the cardPane
+        originalCardPaneX = cardPane.getLayoutX();
+        originalCardPaneY = cardPane.getLayoutY();
+
         label.startFullDrag(); // Start the drag process
+
+        // Start tracking the mouse for dragging
+        cardPane.setOnMouseDragged(this::handleMouseDrag);
+        cardPane.setOnMouseReleased(this::handleMouseRelease);
+    }
+
+    // Method to handle mouse dragging
+    private void handleMouseDrag(MouseEvent event) {
+        // Get the source pane (cardPane)
+        GridPane cardPane = (GridPane) event.getSource();
+
+        // Update the position of the cardPane to follow the mouse
+        cardPane.setLayoutX(event.getSceneX() - cardPane.getWidth() / 2); // Centering the pane on the cursor
+        cardPane.setLayoutY(event.getSceneY() - cardPane.getHeight() / 2);
+    }
+
+    // Method to handle mouse release (stop following the mouse)
+    private void handleMouseRelease(MouseEvent event) {
+        GridPane cardPane = (GridPane) event.getSource();
+
+        // Stop listening for mouse drag events after release
+        cardPane.setOnMouseDragged(null);
+        cardPane.setOnMouseReleased(null);
+
+        cardPane.setLayoutX(originalCardPaneX);
+        cardPane.setLayoutY(originalCardPaneY);
     }
 
     @FXML
