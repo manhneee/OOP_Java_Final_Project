@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
 import javafx.animation.PauseTransition;
 import javafx.animation.RotateTransition;
@@ -360,7 +361,7 @@ public class GameController {
         });
 
         rotateTransition.play();
-    }
+        }
 
     @FXML
     private void handleDragDetected(Label label) {
@@ -419,6 +420,13 @@ public class GameController {
             originalMouseCardPaneY = 425;
         }
 
+        // Provide visual feedback for dragging
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(200), cardPane);
+        fadeIn.setFromValue(1.0);
+        fadeIn.setToValue(0.8); // Slight transparency
+        fadeIn.play();
+        cardPane.setStyle("-fx-border-color: gray; -fx-border-width: 2; -fx-background-color: white;");
+        
         label.startFullDrag(); // Start the drag process
 
         // Start tracking the mouse for dragging
@@ -447,6 +455,12 @@ public class GameController {
         cardPane.setLayoutX(-1);
         cardPane.setLayoutY(-1);
         // Happens to always be -1, since it is relative to it's parent container
+        FadeTransition fadeOut = new FadeTransition(Duration.millis(200), cardPane);
+        fadeOut.setFromValue(0.8);
+        fadeOut.setToValue(1.0);
+        fadeOut.play();
+        // Remove visual feedback
+        cardPane.setStyle(""); // Clear the style
     }
 
     @FXML
@@ -602,14 +616,27 @@ public class GameController {
 
     @FXML
     private void goBack() throws IOException {
+        // Close all open stages
+        for (Stage stage : openStages) {
+            if (stage != null) {
+                stage.close();
+            }
+        }
+        openStages.clear(); // Clear the list of open stages
         App.setRoot("menu");
     }
-
+    
     // Add a class-level variable for the solution stage
+    private List<Stage> openStages = new ArrayList<>();
     private Stage solutionStage;
 
     @FXML
     private void showSolution() throws IOException {
+        // Check if the solution stage is already open
+        if (solutionStage != null && solutionStage.isShowing()) {
+            return;
+        }
+        
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("solution.fxml"));
             Parent root = loader.load();
@@ -635,6 +662,7 @@ public class GameController {
             }
 
             solutionStage.show();
+            openStages.add(solutionStage); // Add the stage to the list of open stages
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -823,12 +851,14 @@ public class GameController {
 
     @FXML
     private void restartGame() throws IOException {
-        // Close the Solution window if it is opened
-        if (solutionStage != null) {
-            solutionStage.close();
-            solutionStage = null; // Reset the reference
+        
+        // Close all open stages
+        for (Stage stage : openStages) {
+            if (stage != null) {
+                stage.close();
+            }
         }
-
+        openStages.clear(); // Clear the list of open stages
         // Restart the game
         App.setRoot("game");
     }
