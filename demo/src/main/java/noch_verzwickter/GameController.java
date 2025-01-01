@@ -341,6 +341,9 @@ public class GameController {
 
     @FXML
     private void handleLabelClick(Label label) {
+
+        playSE(3);
+
         GridPane cardPane = getGridPaneFromLabel(label);
         if (cardPane == null) {
             return;
@@ -472,6 +475,9 @@ public class GameController {
 
     @FXML
     private void handleDragDropped(Label targetLabel) {
+
+        playSE(3);
+
         if (dragSourceLabel == null || targetLabel == null)
             return;
 

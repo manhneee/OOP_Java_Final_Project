@@ -15,6 +15,7 @@ public class MusicSounds {
         soundURL[0] = getClass().getResource("/Music/Give My Regards To Broadway - Freedom Trail Studio.wav");
         soundURL[1] = getClass().getResource("/Music/Quarter Mix - Freedom Trail Studio.wav");
         soundURL[2] = getClass().getResource("/Music/320181__dland__hint.wav");
+        soundURL[3] = getClass().getResource("/Music/card_sound.wav");
     }
 
     public void setFile(int i) {
