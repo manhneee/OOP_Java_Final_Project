@@ -226,6 +226,8 @@ public class GameController {
     private AnimalImages animalImages;
     private Board board;
 
+    private MusicSounds musicSounds = new MusicSounds();
+
     @FXML
     public void initialize() {
         labels = new ArrayList<>();
@@ -325,6 +327,11 @@ public class GameController {
         }
     }
 
+    public void playSE(int i) {
+        musicSounds.setFile(i);
+        musicSounds.play();
+    }
+
     private GridPane getGridPaneFromLabel(Label label) {
         if (label.getParent() instanceof GridPane) {
             return (GridPane) label.getParent();
@@ -361,7 +368,7 @@ public class GameController {
         });
 
         rotateTransition.play();
-        }
+    }
 
     @FXML
     private void handleDragDetected(Label label) {
@@ -426,7 +433,7 @@ public class GameController {
         fadeIn.setToValue(0.8); // Slight transparency
         fadeIn.play();
         cardPane.setStyle("-fx-border-color: gray; -fx-border-width: 2; -fx-background-color: white;");
-        
+
         label.startFullDrag(); // Start the drag process
 
         // Start tracking the mouse for dragging
@@ -616,6 +623,9 @@ public class GameController {
 
     @FXML
     private void goBack() throws IOException {
+
+        playSE(2);
+
         // Close all open stages
         for (Stage stage : openStages) {
             if (stage != null) {
@@ -625,18 +635,21 @@ public class GameController {
         openStages.clear(); // Clear the list of open stages
         App.setRoot("menu");
     }
-    
+
     // Add a class-level variable for the solution stage
     private List<Stage> openStages = new ArrayList<>();
     private Stage solutionStage;
 
     @FXML
     private void showSolution() throws IOException {
+
+        playSE(2);
+
         // Check if the solution stage is already open
         if (solutionStage != null && solutionStage.isShowing()) {
             return;
         }
-        
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("solution.fxml"));
             Parent root = loader.load();
@@ -735,6 +748,9 @@ public class GameController {
 
     @FXML
     private void validCheck(ActionEvent event) {
+
+        playSE(2);
+
         ArrayList<int[]> invalidCards = new ArrayList<int[]>();
         boolean isValid = checkingBoard(board.getElementArray(), invalidCards); // Call the validation method
 
@@ -851,7 +867,9 @@ public class GameController {
 
     @FXML
     private void restartGame() throws IOException {
-        
+
+        playSE(2);
+
         // Close all open stages
         for (Stage stage : openStages) {
             if (stage != null) {
