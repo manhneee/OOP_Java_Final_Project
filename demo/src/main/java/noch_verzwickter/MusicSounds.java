@@ -16,6 +16,8 @@ public class MusicSounds {
         soundURL[1] = getClass().getResource("/Music/Quarter Mix - Freedom Trail Studio.wav");
         soundURL[2] = getClass().getResource("/Music/320181__dland__hint.wav");
         soundURL[3] = getClass().getResource("/Music/card_sound.wav");
+        soundURL[4] = getClass().getResource("/Music/341732__sgtpepperarc360__wrong-answer.wav");
+        soundURL[5] = getClass().getResource("/Music/256128__jimhancock__tada.wav");
     }
 
     public void setFile(int i) {

@@ -754,9 +754,6 @@ public class GameController {
 
     @FXML
     private void validCheck(ActionEvent event) {
-
-        playSE(2);
-
         ArrayList<int[]> invalidCards = new ArrayList<int[]>();
         boolean isValid = checkingBoard(board.getElementArray(), invalidCards); // Call the validation method
 
@@ -778,6 +775,9 @@ public class GameController {
         }
         // Reset result label after 5 seconds
         if (!isValid) {
+
+            playSE(4);
+
             PauseTransition pauseLabel = new PauseTransition(Duration.seconds(5));
             pauseLabel.setOnFinished(e -> resultLabel.setText(""));
             pauseLabel.play();
@@ -853,6 +853,9 @@ public class GameController {
         }
         // Set green background for valid cards
         if (isValid) {
+
+            playSE(5);
+
             for (Label label : labels) {
                 label.setStyle("-fx-border-color: green; -fx-border-width: 2");
             }
