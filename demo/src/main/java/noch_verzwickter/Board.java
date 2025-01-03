@@ -1,5 +1,7 @@
 package noch_verzwickter;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -128,6 +130,19 @@ public class Board {
         // Shuffle the board
         elementArray = shuffleCard(elementArray);
     }
+    // Save the current game state to a file
+    public static void saveGameState(Board board, String filename) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream(filename);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(board.getElementArray());
+            out.writeObject(board.getSolution());
+            out.close();
+            fileOut.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     void rotateCard(ArrayList<Integer> array, int rotations, boolean clockwise) {
         rotations %= 4; // Optimize unnecessary rotations
@@ -168,11 +183,20 @@ public class Board {
         return temparray;
     }
 
+    // getter and setter methods for the elementArray and solution
     public ArrayList<ArrayList<Integer>> getElementArray() {
         return this.elementArray;
     }
 
     public ArrayList<ArrayList<Integer>> getSolution() {
         return this.solution;
+    }
+
+    public void setElementArray(ArrayList<ArrayList<Integer>> elementArray) {
+        this.elementArray = elementArray;
+    }
+
+    public void setSolution(ArrayList<ArrayList<Integer>> solution) {
+        this.solution = solution;
     }
 }

@@ -224,7 +224,7 @@ public class GameController {
     private Label dragSourceLabel;
     private ArrayList<Label> labels;
     private AnimalImages animalImages;
-    private Board board;
+    private static Board board;
 
     private MusicSounds musicSounds = new MusicSounds();
 
@@ -314,9 +314,14 @@ public class GameController {
         labels.add(card9_6);
         labels.add(card9_7);
         labels.add(card9_8);
-
+        // get the animal images
         animalImages = new AnimalImages();
-        board = new Board();
+
+        // Load the saved game state
+        if (board == null) {
+            board = new Board();
+        }
+        // Display the board
         display(animalImages, board.getElementArray());
 
         // Attach interaction handlers
@@ -326,12 +331,26 @@ public class GameController {
             label.setOnMouseDragReleased(event -> handleDragDropped(label)); // Drop
         }
     }
+    
+    // Method to set the board
+    public static void setBoard(Board newBoard) {
+        board = newBoard;
+    }
+    // Method to get the board and save the game
+    @FXML
+    private void saveGame() throws IOException {
+        playSE(2);
+        Board.saveGameState(board, "saved_game.dat");
+        System.out.println("Game saved successfully.");
+    }
+
 
     public void playSE(int i) {
         musicSounds.setFile(i);
         musicSounds.play();
     }
 
+    // Method to get the GridPane from a Label
     private GridPane getGridPaneFromLabel(Label label) {
         if (label.getParent() instanceof GridPane) {
             return (GridPane) label.getParent();
@@ -339,6 +358,7 @@ public class GameController {
         return null; // Return null if the parent is not a GridPane
     }
 
+    // Method to handle rotation of the card when clicked
     @FXML
     private void handleLabelClick(Label label) {
 
@@ -373,6 +393,7 @@ public class GameController {
         rotateTransition.play();
     }
 
+    // Method to handle drag detection
     @FXML
     private void handleDragDetected(Label label) {
         if (label == null)
@@ -473,6 +494,7 @@ public class GameController {
         cardPane.setStyle(""); // Clear the style
     }
 
+    // Method to handle drag dropped
     @FXML
     private void handleDragDropped(Label targetLabel) {
 
@@ -502,6 +524,7 @@ public class GameController {
         display(animalImages, board.getElementArray());
     }
 
+    //Algorithm to rotate the image
     private Image rotateImage(Image inputImage, double angle, boolean clockwise) {
         // Calculate the actual rotation angle in degrees
         double rotationAngle = clockwise ? angle : -angle;
@@ -538,6 +561,8 @@ public class GameController {
         return rotatedImage;
     }
 
+
+    // Method to adjust the image correctly in the label
     private Image imageAdjustment(Image img, int keyImage, int labelCount) {
         if (labelCount == 0) {
             return rotateImage(img, 90, (keyImage > 0));
@@ -552,6 +577,7 @@ public class GameController {
         }
     }
 
+    // Method to set the image to the label
     public void setImageToLabel(@SuppressWarnings("exports") Label label, String imagePath, int keyImage,
             int labelCount) {
         // Load the image
@@ -570,6 +596,7 @@ public class GameController {
         label.setGraphic(imgView);
     }
 
+    // Method to display the board
     public void display(AnimalImages animalImages, ArrayList<ArrayList<Integer>> elementArray) {
         /*
          * The new grid will be
@@ -627,6 +654,7 @@ public class GameController {
         }
     }
 
+    // Method to go back to the menu
     @FXML
     private void goBack() throws IOException {
 
@@ -646,6 +674,7 @@ public class GameController {
     private List<Stage> openStages = new ArrayList<>();
     private Stage solutionStage;
 
+    // Method to show the solution
     @FXML
     private void showSolution() throws IOException {
 
@@ -687,6 +716,7 @@ public class GameController {
         }
     }
 
+    // Algorithm to check the board
     @FXML
     private boolean checkingBoard(ArrayList<ArrayList<Integer>> elementArray, ArrayList<int[]> invalidConditions) {
         boolean[] validCond = {
@@ -752,6 +782,7 @@ public class GameController {
         return invalidConditions.isEmpty();
     }
 
+    // Method to validate the board and display the result
     @FXML
     private void validCheck(ActionEvent event) {
         ArrayList<int[]> invalidCards = new ArrayList<int[]>();
@@ -867,13 +898,14 @@ public class GameController {
         pause.setOnFinished(e -> resetCardBorders());
         pause.play();
     }
-
+    // Method to reset the card borders
     private void resetCardBorders() {
         for (Label label : labels) {
             label.setStyle("-fx-border-color: transparent;");
         }
     }
 
+    // Method to restart the game
     @FXML
     private void restartGame() throws IOException {
 
@@ -886,6 +918,9 @@ public class GameController {
             }
         }
         openStages.clear(); // Clear the list of open stages
+
+        Board newBoard = new Board(); // Initialize a new game board
+        GameController.setBoard(newBoard); // Set the new board
         // Restart the game
         App.setRoot("game");
     }
