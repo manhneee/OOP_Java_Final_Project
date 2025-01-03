@@ -2,10 +2,7 @@ package noch_verzwickter;
 
 import java.net.URL;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineListener;
+import javax.sound.sampled.*;
 
 public class MusicSounds {
     Clip clip;
@@ -48,7 +45,19 @@ public class MusicSounds {
             clip.addLineListener(listener);
         }
     }
-
+    public void setVolume(float volume) {
+        if (clip != null) {
+            try {
+                FloatControl volumeControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+                float min = volumeControl.getMinimum();
+                float max = volumeControl.getMaximum();
+                float scaledVolume = min + (max - min) * volume; // Scale volume (0.0 to 1.0)
+                volumeControl.setValue(scaledVolume);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Volume control not supported.");
+            }
+        }
+    }
     public boolean isPlaying() {
         return clip != null && clip.isRunning();
     }
