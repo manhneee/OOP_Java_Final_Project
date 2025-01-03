@@ -4,12 +4,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import javax.sound.sampled.LineEvent;
-import javax.sound.sampled.LineListener;
+import javax.sound.sampled.*;
 
 public class App extends Application {
 
@@ -23,6 +23,11 @@ public class App extends Application {
         scene = new Scene(loadFXML("menu"));
         primaryStage = stage;
         stage.setScene(scene);
+        // Set the title
+        stage.setTitle("Noch Verzwickter");
+        // Set the logo 
+        stage.getIcons().add(new Image(App.class.getResourceAsStream("/Images/cat_left.png")));
+
         stage.show();
 
         // Adjusts the position of the window
@@ -33,6 +38,7 @@ public class App extends Application {
         playMusic();
     }
 
+    // Play the music
     public void playMusic() {
         playCurrentTrack();
 
@@ -52,9 +58,10 @@ public class App extends Application {
 
     private void playCurrentTrack() {
         musicSounds.setFile(currentTrackIndex);
+        musicSounds.setVolume(0.75f);
         musicSounds.play();
     }
-
+    
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
         // Adjusts the stage size to fit the new scene
