@@ -49,7 +49,7 @@ public class App extends Application {
                 if (event.getType() == LineEvent.Type.STOP) {
                     // Switch to the next track
                     currentTrackIndex = (currentTrackIndex + 1) % 2; // Toggle between 0 and 1
-                    playCurrentTrack();
+                    playMusic();
                 }
                 throw new UnsupportedOperationException("Unimplemented method 'update'");
             }
