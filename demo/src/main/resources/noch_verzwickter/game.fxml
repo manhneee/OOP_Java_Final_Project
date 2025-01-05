@@ -289,5 +289,10 @@
             <Font name="Comic Sans MS Bold Italic" size="15.0" />
          </font>
       </Button>
+      <Button layoutX="244.0" layoutY="640.0" mnemonicParsing="false" onAction="#saveGame" text="SAVE" textFill="DARKORANGE">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

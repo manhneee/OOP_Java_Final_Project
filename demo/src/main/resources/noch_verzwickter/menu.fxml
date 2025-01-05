@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="noch_verzwickter.MenuController">
    <children>
-      <Label layoutX="100.0" layoutY="50.0" prefHeight="150.0" prefWidth="400.0" textAlignment="CENTER">
+      <Label layoutX="100.0" layoutY="30.0" prefHeight="150.0" prefWidth="400.0" textAlignment="CENTER">
          <graphic>
             <ImageView fitWidth="400.0" fitHeight="150.0">
                <image>
@@ -20,7 +20,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Button alignment="CENTER" layoutX="261.0" layoutY="237.0" mnemonicParsing="false" text="PLAY" textFill="#6464ff" onAction="#newGame">
+      <Button alignment="CENTER" layoutX="230.0" layoutY="200.0" mnemonicParsing="false" text=" Continue " textFill="#64e664" onAction="#continueGame">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="20.0" />
          </font>
@@ -28,10 +28,21 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Button alignment="CENTER" layoutX="260.0" layoutY="307.0" mnemonicParsing="false" text="EXIT" textFill="#ff6464" onAction="#exitApp">
+      <Button alignment="CENTER" layoutX="229.0" layoutY="260.0" mnemonicParsing="false" text="New Game" textFill="#6464ff" onAction="#newGame">
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="20.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button alignment="CENTER" layoutX="230.0" layoutY="320.0" mnemonicParsing="false" text="Exit Game" textFill="#ff6464" onAction="#exitApp">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="20.0" />
          </font>
       </Button>
+      
+      <!-- Label messages for continueGame -->
+      <Label fx:id="messageLabel" layoutX="200.0" layoutY="360.0" prefHeight="30.0" prefWidth="200.0" textFill="red" textAlignment="CENTER" />
    </children>
 </Pane>
