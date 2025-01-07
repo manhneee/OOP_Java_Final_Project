@@ -331,11 +331,12 @@ public class GameController {
             label.setOnMouseDragReleased(event -> handleDragDropped(label)); // Drop
         }
     }
-    
+
     // Method to set the board
     public static void setBoard(Board newBoard) {
         board = newBoard;
     }
+
     // Method to get the board and save the game
     @FXML
     private void saveGame() throws IOException {
@@ -343,7 +344,6 @@ public class GameController {
         Board.saveGameState(board, "saved_game.dat");
         System.out.println("Game saved successfully.");
     }
-
 
     public void playSE(int i) {
         musicSounds.setFile(i);
@@ -408,47 +408,47 @@ public class GameController {
 
         if (cardPane == card1) {
             originalMouseCardPaneX = 75;
-            originalMouseCardPaneY = 125;
+            originalMouseCardPaneY = 60;
         }
 
         if (cardPane == card2) {
             originalMouseCardPaneX = 225;
-            originalMouseCardPaneY = 125;
+            originalMouseCardPaneY = 60;
         }
 
         if (cardPane == card3) {
             originalMouseCardPaneX = 375;
-            originalMouseCardPaneY = 125;
+            originalMouseCardPaneY = 60;
         }
 
         if (cardPane == card4) {
             originalMouseCardPaneX = 75;
-            originalMouseCardPaneY = 275;
+            originalMouseCardPaneY = 210;
         }
 
         if (cardPane == card5) {
             originalMouseCardPaneX = 225;
-            originalMouseCardPaneY = 275;
+            originalMouseCardPaneY = 210;
         }
 
         if (cardPane == card6) {
             originalMouseCardPaneX = 375;
-            originalMouseCardPaneY = 275;
+            originalMouseCardPaneY = 210;
         }
 
         if (cardPane == card7) {
             originalMouseCardPaneX = 75;
-            originalMouseCardPaneY = 425;
+            originalMouseCardPaneY = 360;
         }
 
         if (cardPane == card8) {
             originalMouseCardPaneX = 225;
-            originalMouseCardPaneY = 425;
+            originalMouseCardPaneY = 360;
         }
 
         if (cardPane == card9) {
             originalMouseCardPaneX = 375;
-            originalMouseCardPaneY = 425;
+            originalMouseCardPaneY = 360;
         }
 
         // Provide visual feedback for dragging
@@ -524,7 +524,7 @@ public class GameController {
         display(animalImages, board.getElementArray());
     }
 
-    //Algorithm to rotate the image
+    // Algorithm to rotate the image
     private Image rotateImage(Image inputImage, double angle, boolean clockwise) {
         // Calculate the actual rotation angle in degrees
         double rotationAngle = clockwise ? angle : -angle;
@@ -560,7 +560,6 @@ public class GameController {
 
         return rotatedImage;
     }
-
 
     // Method to adjust the image correctly in the label
     private Image imageAdjustment(Image img, int keyImage, int labelCount) {
@@ -794,7 +793,7 @@ public class GameController {
         resultLabel.setStyle(isValid ? "-fx-text-fill: green;" : "-fx-text-fill: red;");
         resultLabel.setFont(new Font("Comic Sans MS Bold Italic", 15));
         resultLabel.setLayoutX(260); // Align at the center of the screen
-        resultLabel.setLayoutY(51); // Adjust layoutY with the BACK button
+        resultLabel.setLayoutY(30); // Adjust layoutY with the BACK button
 
         // Remove any existing result label before adding the new one
         Parent root = ((Button) event.getSource()).getScene().getRoot();
@@ -898,6 +897,7 @@ public class GameController {
         pause.setOnFinished(e -> resetCardBorders());
         pause.play();
     }
+
     // Method to reset the card borders
     private void resetCardBorders() {
         for (Label label : labels) {
