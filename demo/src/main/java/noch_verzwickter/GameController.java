@@ -695,7 +695,7 @@ public class GameController {
 
             // Position the new window next to the game window
             Stage gameStage = (Stage) card1_0.getScene().getWindow(); // Reference primary stage
-            solutionStage.setX(gameStage.getX() + gameStage.getWidth() - 15); // Position next to game window
+            solutionStage.setX(gameStage.getX() + gameStage.getWidth() - 20); // Position next to game window
             solutionStage.setY(gameStage.getY()); // Align vertically with the game window
 
             // Ensure display works with the solution root instead of game elements

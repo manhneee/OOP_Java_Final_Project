@@ -12,7 +12,7 @@
    <children>
       <Label fx:id="background1" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: white;" />
 
-      <GridPane alignment="CENTER" layoutX="75.0" layoutY="60.0" prefHeight="450.0" prefWidth="450.0" style="-fx-border-color: darkgrey; -fx-border-width: 5; -fx-border-style: solid;">
+      <GridPane alignment="CENTER" layoutX="75.0" layoutY="60.0" prefHeight="455.0" prefWidth="450.0" style="-fx-border-color: darkgrey; -fx-border-width: 5; -fx-border-style: solid;">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

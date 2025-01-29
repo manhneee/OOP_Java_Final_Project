@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="noch_verzwickter.GameController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="noch_verzwickter.GameController">
    <children>
       <Label fx:id="background1" prefHeight="470.0" prefWidth="470.0" style="-fx-background-color: white;" />
 
-      <GridPane alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="450.0" prefWidth="450.0" style="-fx-border-color: darkgrey; -fx-border-width: 5; -fx-border-style: solid;">
+      <GridPane alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="455.0" prefWidth="455.0" style="-fx-border-color: darkgrey; -fx-border-width: 5; -fx-border-style: solid;">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
