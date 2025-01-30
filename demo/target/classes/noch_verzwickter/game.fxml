@@ -289,7 +289,7 @@
             <Font name="Comic Sans MS Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="238.0" layoutY="544.0" mnemonicParsing="false" onAction="#saveGame" text="SAVE" textFill="DARKORANGE">
+      <Button layoutX="238.0" layoutY="544.0" mnemonicParsing="false" onAction="#saveGame" text="SAVE" textFill="#ff64ff">
          <font>
             <Font name="Comic Sans MS Bold Italic" size="15.0" />
          </font>

@@ -26,7 +26,7 @@ public class App extends Application {
         // Set the title
         stage.setTitle("Noch Verzwickter");
         // Set the logo 
-        stage.getIcons().add(new Image(App.class.getResourceAsStream("/Images/cat_left.png")));
+        stage.getIcons().add(new Image(App.class.getResourceAsStream("/Images/logo.png")));
 
         stage.show();
 
