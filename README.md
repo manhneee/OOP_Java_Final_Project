@@ -10,7 +10,7 @@ Welcome to the Noch Verzwickter project developed by FKy Team. This project is a
 
 ## Introduction
 
-Noch Verzwickter is a puzzle game where players need to solve various challenges by interacting with the game board.
+Noch Verzwickter is a puzzle game where players need to match icons by interacting with the game board.
 
 ## Features
 
@@ -106,7 +106,7 @@ The workspace contains the following folders:
 
 ## License
 
-TThis project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
 
 ## Acknowledgments
 
