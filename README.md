@@ -75,8 +75,17 @@ The workspace contains the following folders:
 
 ## Screenshots
 
-![Screenshot 1](GUI/menu.png)
-![Screenshot 2](GUI/gamePlay.png)
+<p align="center">
+  <img src="GUI/menu.png" alt="Main Menu" width="300">
+  <br>
+  <i>1. Main Menu</i>
+</p>
+
+<p align="center">
+  <img src="GUI/gamePlay.png" alt="Game Play" width="300">
+  <br>
+  <i>2. Game Play</i>
+</p>
 
 ## Contributing
 
